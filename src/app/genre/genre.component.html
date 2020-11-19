@@ -1,0 +1,74 @@
+<homepage-navbar></homepage-navbar>
+<nav-options></nav-options>
+<div class="container-fluid sub-heading bg-dark">
+    <h2 class="text-white">Genre</h2>
+ </div>
+
+<div class="page-genre">
+    <div>
+        <div class="button-genre">
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(28)">Action</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(12)">Adventure</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(16)">Animation</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(35)">Comedy</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(80)">Crime</button>
+        </div>
+        <div class="button-genre mt-3">
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(18)">Drama</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(14)">Fantasy</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(36)">History</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(27)">Horror</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(9648)">Mystery</button>
+    
+        </div>
+        <div class="button-genre mt-3">
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(10749)">Romance</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(878)">Fiction</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(53)">Thriller</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(10752)">War</button>
+            <button type="button" class="btn btn-outline-light m-1" (click)="genre(37)">Western</button>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-dark sub-heading">
+        <h5 class="text-white">Movies(Genres)</h5>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let movie of genreMovies">
+                <div class="card text-white bg-secondary mb-3">
+                    <div class="image">
+                        <img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="card-img-top" alt="...">
+                        <div class="text-visible">
+                            <div>
+                               <strong>{{movie.title}}</strong>
+                               <p>{{movie.overview}}</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-light btn-sm" routerLink="/movies/{{movie.title}}">View More</button>
+                            <p>
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill love" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                  </svg>
+                                  {{movie.vote_average}}
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<homepage-footer></homepage-footer>

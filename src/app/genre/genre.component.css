@@ -1,0 +1,35 @@
+.button-genre{
+    text-align: center;
+}
+.sub-heading{
+    text-align: center;
+}
+
+.image:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    position:relative;
+    z-index: 100;
+}
+.text-visible{
+    position:absolute;
+    left:0;
+    bottom:0;
+    background-color: #222;
+    opacity:0.8;
+    visibility: hidden;
+    background: linear-gradient(rgba(27,37,48,0),#1b2530 48px);
+   
+}
+
+.image:hover .text-visible{
+    visibility: visible;
+}
+
+.page-genre{
+    margin-top:1%;
+}
+.love{
+    color:red;
+}

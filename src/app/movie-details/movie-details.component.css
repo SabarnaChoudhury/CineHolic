@@ -1,0 +1,35 @@
+.sub-heading{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.card{
+    border : none;
+}
+
+.card-body{
+    background-color: #222;
+}
+
+.youtube-link{
+    text-decoration: none;
+    color:white;
+}
+
+button:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.list-decoration{
+    display: inline-block;
+    text-decoration: none ;
+}
+
+.movie-details{
+    margin-top:5rem;
+}

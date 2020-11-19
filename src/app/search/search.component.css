@@ -1,0 +1,142 @@
+.input-search{
+    width:90%;
+    height: 100%;
+}
+.input-search{
+    background-color: #222;
+   
+    border:none;
+    border-bottom: 1px solid White;
+    border-radius: 0%;
+    font-size: 30px;
+    color:white;
+}
+.input-search::-webkit-input-placeholder { 
+    font-size: 30px;
+    color:white;
+}
+input:focus{
+        outline: none;
+}
+.card-img-top{
+    height:20%;
+}
+
+dl{
+    display: inline-block;
+}
+
+td{
+    margin-right:5px;
+}
+
+.image:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    position:relative;
+    z-index: 100;
+}
+.text-visible{
+    position:absolute;
+    left:0;
+    bottom:0;
+    background-color: #222;
+    opacity:0.8;
+    visibility: hidden;
+    background: linear-gradient(rgba(27,37,48,0),#1b2530 48px);
+   
+}
+
+.image:hover .text-visible{
+    visibility: visible;
+}
+.bi{
+    color:red;
+}
+.favourite{
+    
+    border-radius: 50%;
+    border:none;
+    font-size: 25px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+.plot{
+    font-size: small;
+}
+.play{
+    font-size: 20px;
+    color:white;
+}
+.youtube-link{
+    text-decoration: none;
+    color:white;
+}
+button:hover{
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* copied */
+.card-body{
+    background-color: #222;
+}
+
+.card-wrap{
+    position: relative;
+    transition: transform .2s;
+}
+
+.card-visible{
+    position: absolute;
+    top:0px;
+    bottom: 0px;
+    left:0px;
+    right: 0px;
+    background-color: rgb(79, 79, 241);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card-wrap:hover{
+    -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); 
+}
+
+.card-wrap:hover .card-visible{
+    visibility: visible;
+    opacity: 0.8;
+}
+
+.btn-round{
+    border-radius: 50%;
+    background-color: rgb(79, 79, 241);
+    border: 8px, white;
+}
+
+.btn-round:hover{
+    background-color: white;
+    opacity: 1;
+}
+
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.buttons{
+    margin-top:120px;
+}
+.icons{
+    color:white;
+}

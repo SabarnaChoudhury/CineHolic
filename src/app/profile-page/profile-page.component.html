@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="bg-image">
+    <nav class="navbar navbar-light bg-dark">
+        <a class="navbar-brand text-white">USER PROFILE</a>
+        <form class="form-inline">
+            <img class="image-size" src="https://image.shutterstock.com/image-vector/person-icon-260nw-282598823.jpg" alt="user" style="float:right;border-radius: 50%;">
+            <h5 class="text-white ml-2" style="float:right;">{{currentUser.firstname}} {{currentUser.lastname}}</h5>
+        </form>
+      </nav>
+      <div class="container bg-dark container-size">
+          <div class="row mt-5" style="padding-left: 50px;">
+              <div class="col-lg-3 col-md-4 col-sm-6">
+                <img class="user-image" src="https://w7.pngwing.com/pngs/749/820/png-transparent-computer-icons-black-white-people-critical-illness-miscellaneous-people-black.png" alt="UserName" style="border-radius: 50%;">
+                <h6 class="text-white ml-5 mt-2">{{currentUser.firstname}} {{currentUser.lastname}}</h6>
+                <p class="ml-5"><small class="text-white">{{currentUser.email}}</small></p>
+               </div>
+              <div class="col-lg-9 col-md-8 col-sm-6">
+                <table>
+                  <tr>
+                     <h5 class="text-white mr-3 mt-1">First Name</h5>
+                      <td><input class="form-control" id="firstname" [(ngModel)]="currentUser.firstname" [readonly]="isReadonly" type="text" name = "currentUser.firstname"></td>
+                    </tr><br>
+                   <tr>
+                      <h5 class="text-white mr-3 mt-1">Last Name</h5>
+                     <td><input class="form-control" id="lastname" [(ngModel)]="currentUser.lastname" [readonly]="isReadonly" type="text" name = "currentUser.lastname"></td>
+                    </tr><br>
+                   <tr>
+                     <h5 class="text-white mr-3 mt-1">Email Id</h5>
+                     <td><input class="form-control" id="email" [(ngModel)]="currentUser.email" [readonly]="isReadonly" type="email" name = "currentUser.email"></td>
+                    </tr><br>
+                  <tr>
+                    <h5 class="text-white mr-3 mt-1">Contact Number</h5>
+                    <td><input class="form-control" id="phoneNumber" [(ngModel)]="currentUser.phoneNumber" [readonly]="isReadonly" type="number" name = "currentUser.phoneNumber"></td>
+                  </tr><br>
+                  <tr>
+                    <h5 class="text-white mr-3 mt-1">New Password</h5>
+                    <td><input class="form-control" id="password" [(ngModel)]="currentUser.password" [readonly]="isReadonly" [type]="passwordType" name = "currentUser.password"></td>
+                    <div (click)="toggleIcon()">
+                      <svg *ngIf ="showMe" (click)="togglePassword()" style="color:white;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                        <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                      </svg>
+                      <svg *ngIf ="!showMe" (click)="togglePassword()" style="color:white;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-slash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
+                        <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829z"/>
+                        <path fill-rule="evenodd" d="M13.646 14.354l-12-12 .708-.708 12 12-.708.708z"/>
+                      </svg>
+                    </div>
+                  </tr><br>
+                </table>
+              </div>
+                
+          </div>
+          <!--<div class="text-center mt-4">
+            <button *ngIf="enableEdit" (click)="enableEdit=false" class="btn btn-danger mr-2"ng-click="cancel()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-left-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+            </svg><span class="ml-2">Back</span></button>
+            <button *ngIf="enableEdit" id="saveBtn" class="btn btn-success" (click)="save()" type="button"><i style="font-size:15px" class="fa">&#xf0c7;</i><span class="ml-2">Save Profile</span></button> 
+            <button class="btn btn-info" type="button" *ngIf="!enableEdit" (click)="enableEditMethod($event)"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+            </svg> <span class="ml-2">Edit Profile</span></button>
+          </div> -->
+ 
+          <div class="text-center mt-4"(click)="toggleButton()">
+            <button *ngIf="!showButton" id="saveBtn" class="btn btn-success" (click)="save()" type="button"><i style="font-size:15px" class="fa">&#xf0c7;</i><span class="ml-2">Save Profile</span></button> 
+            <button *ngIf="showButton" class="btn btn-info" type="button" (click)="cancel()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+            </svg> <span class="ml-2">Edit Profile</span></button>
+          </div>          
+
+      </div>
+</div>
+
+    

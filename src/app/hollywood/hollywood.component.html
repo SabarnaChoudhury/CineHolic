@@ -1,0 +1,49 @@
+
+<homepage-navbar></homepage-navbar>
+
+<!--Hollywood-->
+<div class="hollywood">
+  <div class="container-fluid sub-heading bg-dark">
+    <h2 class="text-white">Hollywood</h2>
+  </div>
+  <div class="container my-3">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 card-wrap" *ngFor = "let movie of hollywood">
+        <div class="card my-4" style="height: 400px;">
+         <img [src]="movie['Poster']" style="height: 200px;" class="card-img-top" alt="{{movie.Title}}">
+          <div class="card-body">
+            <h4 class="text-white">{{movie.Title}}</h4>
+            <p class="text-white">{{movie.Genre}}</p>
+            <div class="d-flex justify-content-between">
+              <p class="text-success">HD 720p</p>
+            <small>
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill love" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              </svg>
+              {{movie.imdbRating}}</small>
+            </div>
+          </div>
+          <div class="card-visible">
+            <div class="center">
+              <button type="button" class="btn btn-large btn-light btn-round" data-toggle="tooltip" data-placement="top" title="Movie Description" style="margin-right: 30px;" routerLink="/movies/{{movie.Title}}"><svg style="color: rgb(22, 3, 75);font-size:50px;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+              </svg></button>
+              <button type="button" class="btn btn-large btn-light btn-round my-4" data-toggle="tooltip" data-placement="top" title="Add to Watch Later" style="margin-right: 30px;" (click)="MovieToWatchLater(movie)"><svg style="color: rgb(22, 3, 75);font-size:50px;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+              </svg></button>
+              <button type="button" class="btn btn-large btn-light btn-round" data-toggle="tooltip" data-placement="top" title="Add to Favorite" (click)="MovieToFav(movie)"><svg style="color: rgb(22, 3, 75);font-size:50px;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              </svg></button>
+            </div>
+        </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<homepage-footer></homepage-footer>

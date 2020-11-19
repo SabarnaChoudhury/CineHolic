@@ -1,0 +1,25 @@
+.picture{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+.contact-card{
+    position: relative; 
+    margin-left: 26%;
+    margin-right:25%;
+    margin-top:15%;
+}
+.contact-info{
+    /* background-color: blue; */
+    background: linear-gradient(rgba(9, 25, 43, 0.822),#4785c9 100px);
+    color:whitesmoke;
+}
+.text-blue{
+    color: rgb(5, 5, 92);
+}
+.text-sky{
+    color:skyblue;
+}

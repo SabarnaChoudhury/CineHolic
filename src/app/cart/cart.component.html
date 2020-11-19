@@ -1,0 +1,91 @@
+<homepage-navbar></homepage-navbar>
+
+<div class="cartMovies">
+
+    <div class="container container-fluid bg-secondary">
+        <h3 class="text-white">Cart({{arrMovie.length}})</h3>
+    </div>
+
+    <div class="container" *ngIf="!show()">
+        <div class="row mt-5">
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <img src="https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg" alt="cart empty">
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12">
+                <h2 class="text-white animation-style">Your CineHolic Cart is empty !</h2>
+                <p class="text-white mb-5">Buy today's deals</p>
+                <div class="text-center"><button type="button" class="btn btn-info pl-3 pr-3" routerLink="/home">Buy Now</button></div>
+            </div>
+        </div>
+        <p class="text-muted mt-2"><small>The price and availability of items at CineHolic.com are subject to change. The Cart is a temporary place to store a list of your items and reflects each item's most recent price.
+ 
+            Do you have a gift card or promotional code? We'll ask you to enter your claim code when it's time to pay.</small></p>
+    </div>
+    <div class="container" *ngIf="show()">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card text-white bg-secondary mb-3" *ngFor="let movie of arrMovie; let i=index">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img [src]="movie.Poster" class="card-img" alt="movie.Title"
+                                style="max-width: 15rem; max-height: 15rem;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body sellerTag">
+                                <h5 class="card-title">{{movie.Title}}</h5>
+                                <div class="card-text ">Seller: <span class="text-warning">CineHolic</span></div>
+                                <div class="d-flex flex-wrap ">
+                                    <div class="mr-2">{{movie.Type}}</div>
+                                    <div class="mr-2">{{movie.Year}}</div>
+                                    <div class="mr-2">{{movie.Runtime}}</div>
+                                </div>
+                                <div>Director: {{movie.Director}}</div>
+                                <div><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill heart"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                                    </svg> {{movie.imdbRating}}</div>
+                                <div>
+                                    <p>₹ {{movie.imdbRating*5}}</p>
+                                </div>
+
+                                <div class="btn-remove">
+
+                                
+
+                                <button type="button" class="btn btn-danger btn-sm "
+                                    (click)="remove(i)">Remove</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="card text-white bg-secondary mb-3">
+                    <div class="card-header">Price Details</div>
+                    <div class="card-body" *ngFor="let movie of arrMovie">
+                        <div class="row">
+                            <h5 class="card-title col-md-8">{{movie.Title}}</h5>
+                            <p class="card-text col-md-4">₹ {{movie.imdbRating*5}}</p>
+                        </div>
+                    </div>
+                    <div class="row px-3">
+                    <div class="card-header col-md-8">Total Price</div>
+                    <div class="card-header col-md-4">₹ {{price()}}</div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-success text-white btn-order" routerLink="/billing-page">PLACE ORDER
+                          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<homepage-footer></homepage-footer>

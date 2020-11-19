@@ -1,0 +1,28 @@
+.cartMovies{
+    margin-top: 5rem;
+}
+.heart{
+    color:red;
+}
+.sellerTag{
+    font-size: smaller;
+}
+.btn-remove{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+.btn-order{
+    display: block;
+  width: 100%;
+  border: none;
+  background-color: #4CAF50;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+.animation-style{
+    animation: shakeX;
+    animation-duration: 1s;
+}

@@ -1,0 +1,18 @@
+{
+  "userDetails": [
+    {
+      "email": "medha@gmail.com",
+      "firstname": "medha",
+      "lastname": "roy",
+      "password": "123456",
+      "phoneNumber": "8547512489"
+    },
+    {
+      "email": "chrims@gmail.com",
+      "firstname": "Rimashree",
+      "lastname": "Chatterjee",
+      "password": "987654",
+      "phoneNumber": "8777743329"
+    }
+  ]
+}

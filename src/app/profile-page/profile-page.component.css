@@ -1,0 +1,33 @@
+.bg-image {
+background-image: url(https://cache.desktopnexus.com/thumbseg/1443/1443093-bigthumbnail.jpg);
+position: fixed;
+width: 100vw;
+height: 100vh;
+background-repeat: no-repeat;
+background-attachment: fixed;
+opacity :1;
+-webkit-background-size: cover;
+background-size: cover;      
+}
+
+.image-size{
+    height:30px;
+    width: 30px;
+}
+
+.user-image{
+    height:200px;
+    width:200px;
+}
+
+.container-size{
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin:auto;
+    height : 500px;
+    width :  1000px;
+    opacity:0.8;
+}

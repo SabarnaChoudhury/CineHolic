@@ -1,0 +1,92 @@
+p{
+    color:white;
+}
+.adv-main-div{
+    position: relative;
+    
+}
+.adjust{
+    padding-top: 5%;
+}
+.adv{
+    height: 500px;
+    width:100%;
+   
+}
+.adv-text-left{
+    position: absolute;
+    top:25%;
+    left: 5%;
+}
+.adv-text-top{
+    position: absolute;
+    top:20%;
+    left: 35%;
+    text-align: center;
+}
+.adv-text-right{
+    position: absolute;
+    top:25%;
+    right: 5%;
+    text-align: right;
+}
+.adv-btn-div{
+    height: 100px;
+}
+.adv-btn{
+   width:60%;
+}
+
+.features{
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+    padding: 3% 15%;
+    color:black;
+  }
+  .feature-box{
+    text-align: center;
+    align-items: center;
+    color:black;
+  
+  }
+  .feature{
+      color:black;
+  }
+
+  /* navbar and footer of initial-login-page */
+.navbar{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index: 100;
+}
+
+  .text-size{
+    font-size: 35px;
+}
+
+svg{
+    color: white;
+}
+
+.lang{
+    margin-right: 15px;
+    padding-top: 11px;
+}
+
+.foot-space{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.footer-ul{
+    list-style: none;
+}
+
+.footer-li{
+    display: inline-block;
+    color: rgb(4, 4, 78);
+    padding-right:15px;
+}

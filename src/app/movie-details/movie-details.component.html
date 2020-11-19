@@ -1,0 +1,172 @@
+<homepage-navbar></homepage-navbar>
+
+<div class="movie-details">
+<div class="container-fluid sub-heading bg-dark">
+  <h2 class="text-white">Movie Details</h2>
+</div>
+
+<div class="container my-3" style="padding-bottom: 100px;">
+    
+   <div class="text-white">
+        
+    <div class="card mb-3" style="max-width: 2000px; height:600px;">
+      <div class="row no-gutters">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h2 class="card-title mb-3">{{movie.Title}}</h2>
+            <div class="mb-3">
+              <h6 class="list-decoration text-left mr-3"><svg style="color:rgb(139, 12, 12); " width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+              </svg><span class="text-white" style="padding-left:10px;">{{movie.imdbRating}}</span></h6>
+              <h6 class="list-decoration mr-3" style="color: #8197a4;">{{movie.Runtime}}</h6>
+              <h6 class="list-decoration mr-3" style="color: #8197a4;">{{movie.Year}}</h6>
+              <h6 class="list-decoration mr-3" style="color: #8197a4;">₹ {{movie.imdbRating*5}}</h6>
+              <h6 class="list-decoration text-success mr-3">HD 720p</h6>
+            </div>
+            <h6 class="mb-4">{{movie.Plot}}</h6>
+            <div class="mb-5">
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Directors</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Director}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Writers</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Writer}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Starring</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Actors}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Genres</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Genre}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Language</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Language}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Country</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Country}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Awards</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Awards}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Metascore</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Metascore}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">IMDb Votes</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.imdbVotes}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Production</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Production}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-2">
+                  <h6 style="color: #8197a4;">Release</h6>
+                </div>
+                <div class="col-10">
+                  <h6 style="color:#79b8f3;">{{movie.Released}}</h6>
+                </div>
+              </div>
+              <div class="row">
+               
+                
+              </div>
+            </div>
+            <h1 style="color:rgb(20, 113, 235);">CineHolic</h1>
+            <button type="button" class="btn btn-dark"><a class="youtube-link"
+              [href]="'https://www.youtube.com/results?search_query='+movie.Title" class="text-white">Watch Trailer<span style="padding-left: 10px;"><svg width="1em" style="color:white;font-size:30px;" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+               </svg></span></a>
+            </button>
+            <button type="button" class="btn btn-warning text-dark mx-3" (click)="addToCart(movie)" data-toggle="modal" data-target="#exampleModal">Add to Cart<span style="padding-left: 10px;"><svg style="color:black;font-size:30px;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+            </svg></span>
+            </button>
+            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content bg-dark text-white">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">CineHolic</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    {{movie.Title}} is added in your cart.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+
+            <button type="button" class="btn btn-success text-white" routerLink = "/billing-page" [disabled]="movie.Year === '2021'">Buy Now<span style="padding-left: 10px;"><svg style="color:white;font-size:30px;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tv-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2.5 13.5A.5.5 0 0 1 3 13h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zM2 2h12s2 0 2 2v6s0 2-2 2H2s-2 0-2-2V4s0-2 2-2z"/>
+            </svg></span>
+            </button>
+            <p class="card-text mt-3"><small class="text-muted">By ordering or viewing, you agree to our Terms. Sold by CineHolic.com Services LLC.</small></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img [src]="movie['Poster']" style = "height:600px;" class="card-img" alt="{{movie.Title}}">
+        </div>
+      </div>
+    </div>
+        
+  </div>
+</div>
+</div>
+
+
+
+<homepage-footer></homepage-footer>
+
+  
