@@ -33,3 +33,31 @@ button:hover{
 .movie-details{
     margin-top:5rem;
 }
+.addtocart{
+    margin:0px 5px;
+}
+.card-back{
+    background-color: #222;
+}
+
+@media only screen and (max-width:1024px){
+    .footer1{
+        display:none;
+    }
+    .custom-class{
+        width: 100%; 
+        display:block;
+    }
+    .addtocart{
+        margin-left: 0;
+        margin-right:0;
+        margin-top:2px;
+        margin-bottom: 2px;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    .footer2{
+        display:none;
+    }
+}

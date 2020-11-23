@@ -140,3 +140,33 @@ button:hover{
 .icons{
     color:white;
 }
+
+.img{
+    height: 300px; 
+    width: 298px;
+}
+@media only screen and (max-width:1024px){
+    .trailer,.footer1{
+        display:none;
+    }
+    .btn-search{
+        margin-top:5px;
+        margin-left: 10px;
+    }
+    .img{
+        height: 170px; 
+        width: 160px;
+    }
+    .buttons{
+        margin-top:0px;
+    }
+    .view{
+        margin-top:3px;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    .footer2{
+        display:none;
+    }
+}

@@ -61,7 +61,25 @@
     color:red;
 }
 
+.heading{
+    margin-top:100px;
+}
+
 /* extra added */
 /* .trending{
     padding-top:10px;
 } */
+
+@media only screen and (max-width:1024px){
+    .footer1,.page-heading,.carousel{
+        display:none;
+    }
+    .heading{
+        margin-top:10px;
+    }
+}
+@media only screen and (min-width:1024px){
+    .footer2{
+        display:none;
+    }
+}

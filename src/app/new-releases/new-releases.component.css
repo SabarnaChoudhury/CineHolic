@@ -80,3 +80,15 @@
     right:2%;
     z-index: 1;
 }
+
+@media only screen and (max-width:1024px){
+    .footer1,.page-heading,.carousel{
+        display:none;
+    }
+}
+
+@media only screen and (min-width:1024px){
+    .footer2{
+        display:none;
+    }
+}

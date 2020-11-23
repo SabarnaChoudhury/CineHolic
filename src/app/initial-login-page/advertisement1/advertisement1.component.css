@@ -22,6 +22,7 @@ p{
     position: absolute;
     top:20%;
     left: 35%;
+    right:35%;
     text-align: center;
 }
 .adv-text-right{
@@ -89,4 +90,13 @@ svg{
     display: inline-block;
     color: rgb(4, 4, 78);
     padding-right:15px;
+}
+
+@media only screen and (max-width:1024px){
+
+    .adv-text-left,.adv-text-top,.adv-text-right{
+        left:0;
+        right:0;
+        text-align: center;
+    }
 }

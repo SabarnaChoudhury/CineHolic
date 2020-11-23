@@ -2,7 +2,7 @@
     <form [formGroup]="form">
         <input type="text" name="search" formControlName="searchInput" id="searchInput" class="input-search"
             placeholder="Search for Movies, Shows etc." spellcheck="false" autocomplete="off" autocorrect="off">
-        <button class="btn btn-outline-secondary ml-3" (click)="search()">Search</button>
+        <button class="btn btn-outline-secondary ml-3 btn-search" (click)="search()">Search</button>
     </form>
 </div>
 
@@ -18,9 +18,9 @@
     <div class="mb-4 mx-auto card text-white bg-dark mb-3" style="max-width: 900px;"
         *ngFor="let movieData of movieData">
         <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-md-4 col-4">
                 <div class="image">
-                    <img [src]="movieData.Poster" style="height: 300px; width: 298px;" class="card-img-top"
+                    <img [src]="movieData.Poster" class="card-img-top img"
                         alt="movieData.Title">
                     <div class="text-visible">
                         <div class="d-flex justify-content-between">
@@ -32,10 +32,11 @@
 
             </div>
 
-            <div class="col-md-8">
+            <div class="col-8 col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">{{movieData.Title}}</h5>
-                    <div>
+                    <div class="row">
+                        <div class="col-md-12 col-4">
                         <table class="description-table" cellspacing="5">
                             <!-- <tr>
                                 <th>Directors</th>
@@ -66,32 +67,34 @@
                                 <td>{{movieData.Type}}</td>
                             </tr>
                         </table>
+                        </div>
+                        <div class="buttons col-md-12 col-8">
+                            <button class="btn btn-success btn-lg trailer"><a class="youtube-link"
+                                    [href]="'https://www.youtube.com/results?search_query='+movieData.Title" data-toggle="tooltip" data-placement="top" title="YouTube trailer">
+                                    
+                                    Watch Trailer
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill play"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+                                </svg></a>
+                            </button>
+                            <button class="btn btn-danger  ml-3 btn-lg" (click)="AddToFav(movieData)" data-toggle="tooltip" data-placement="top" title="Add to Favourite">
+                                Favourite 
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill icons" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                  </svg>
+                            </button>
+                            <button class="btn btn-info  ml-3 btn-lg view" routerLink="/movies/{{movieData.Title}}" data-toggle="tooltip" data-placement="top" title="Movie Description">
+                               View More
+                               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-square-fill icons" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
+                              </svg>
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="buttons">
-                        <button class="btn btn-success btn-lg"><a class="youtube-link"
-                                [href]="'https://www.youtube.com/results?search_query='+movieData.Title" data-toggle="tooltip" data-placement="top" title="YouTube trailer">
-                                
-                                Watch Trailer
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-play-fill play"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
-                            </svg></a>
-                        </button>
-                        <button class="btn btn-danger  ml-3 btn-lg" (click)="AddToFav(movieData)" data-toggle="tooltip" data-placement="top" title="Add to Favourite">
-                            Favourite 
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-heart-fill icons" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-                              </svg>
-                        </button>
-                        <button class="btn btn-info  ml-3 btn-lg" routerLink="/movies/{{movieData.Title}}" data-toggle="tooltip" data-placement="top" title="Movie Description">
-                           View More
-                           <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-square-fill icons" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
-                          </svg>
-                        </button>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -105,7 +108,7 @@
 <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide *ngFor="let movie of relatedMovies">
         <div class="card-wrap">
-            <div class="card my-4" style="width: 300px;height:500px;">
+            <div class="card my-4" style="height:500px;">
                 <img [src]="movie['Poster']" style="height: 300px;" class="card-img-top" alt="{{movie.Title}}">
                 <div class="card-body">
                     <h4 class="text-white">{{movie.Title}}</h4>
@@ -144,5 +147,21 @@
     </ng-template>
 </owl-carousel-o>
 <div class="mt-5">
-    <homepage-footer></homepage-footer>
+    <div class="footer1"><homepage-footer></homepage-footer></div>
+<div class="footer2">
+  <footer>
+    <div class="bg-dark foot-space">
+        <h3 class="text-center text-white">Cineholic</h3>
+        <div class="text-center">
+            <ul class="footer-ul">
+                <a href="#"><li class="footer-li">Terms and Privacy Notice</li></a>
+                <a href="#"><li class="footer-li">Send us feedback</li></a>
+                <a href="#"><li class="footer-li">Help</li></a>
+                <li class="text-white footer-li">&#169; 1996-2020, Cineholic.com, Inc. or its affiliates</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</div>
+
 </div>

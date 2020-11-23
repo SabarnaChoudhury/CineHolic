@@ -38,9 +38,9 @@ h2 {
   padding: 0;
   font-family: 'Poppins', sans-serif;
   background-image: url(https://www.wallpaperflare.com/static/1017/842/358/tv-banshee-breaking-bad-vikings-wallpaper-preview.jpg);
-  position: fixed;
+  /* position: fixed; */
   width: 100vw;
-  height: 100vh;
+  height: 130vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
   -webkit-background-size: cover;

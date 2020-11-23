@@ -33,7 +33,7 @@
     font-size: 12px;
 }
 .main-icon{
-    padding-left:150px;
+    padding-left:15vw;
 }
 
 /* side nav */
@@ -75,3 +75,16 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+  @media only screen and (max-width:1024px){
+
+   .contact_us{
+     display:none;
+   }
+   .search{
+     display:none;
+   }
+   .main-icon{
+    padding-left:12vw;
+}
+}

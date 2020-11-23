@@ -3,10 +3,10 @@
 
 <div class="holder">
   <!--Top Picks-->
-  <div class="container-fluid sub-heading bg-dark">
+  <div class="container-fluid sub-heading bg-dark page-heading">
      <h2 class="text-white">Top Picks</h2>
   </div>
-  <div class="container-fluid my-3" style="padding-bottom: 100px; width: 800px;">
+  <div class="container-fluid my-3 carousel" style="padding-bottom: 100px; width: 800px;">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" >
         <ol class="carousel-indicators">
           <li *ngFor = "let movie of topPicksMovies ; let i = index " data-target="#carouselExampleCaptions" data-slide-to="{{i}}" [class.active] = "i==0"></li>
@@ -134,5 +134,20 @@
   </div>
 </div>
 
-<homepage-footer></homepage-footer>
+<div class="footer1"><homepage-footer></homepage-footer></div>
+<div class="footer2">
+  <footer>
+    <div class="bg-dark foot-space">
+        <h3 class="text-center text-white">Cineholic</h3>
+        <div class="text-center">
+            <ul class="footer-ul">
+                <a href="#"><li class="footer-li">Terms and Privacy Notice</li></a>
+                <a href="#"><li class="footer-li">Send us feedback</li></a>
+                <a href="#"><li class="footer-li">Help</li></a>
+                <li class="text-white footer-li">&#169; 1996-2020, Cineholic.com, Inc. or its affiliates</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</div>
 
