@@ -1,8 +1,8 @@
 .bg-image {
 background-image: url(https://cache.desktopnexus.com/thumbseg/1443/1443093-bigthumbnail.jpg);
-position: fixed;
+/* position: fixed; */
 width: 100vw;
-height: 100vh;
+height: 130vh;
 background-repeat: no-repeat;
 background-attachment: fixed;
 opacity :1;
@@ -30,4 +30,23 @@ background-size: cover;
     height : 500px;
     width :  1000px;
     opacity:0.8;
+}
+.profile-icon{
+    text-align: center;
+}
+@media only screen and (max-width:1024px){
+    .profile-icon{
+        text-align: center;
+    }
+    .container-size{
+        position: absolute;
+        top:0px;
+        bottom:0px;
+        left:0px;
+        right:0px;
+        margin-top:15%;
+        height : 800px;
+        width :  100%;
+        opacity:0.8;
+    }
 }
