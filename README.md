@@ -1,5 +1,6 @@
-# MovieProject
-
+# CineHolic
+CineHolic is a movie search and buy based application made using Angular version 10.1.2.
+CineHolic is made using OMDB and TMDB api as well.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
 ## Development server
